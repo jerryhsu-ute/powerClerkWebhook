@@ -4,12 +4,17 @@ const bodyParser = require('koa-bodyparser');
 const app = new koa()
 app.use(bodyParser());
 
-const body = {
-    name: "hello from Jerry"
-}
+
 
 app.use(async (ctx) => {
+    const { fields } = ctx.request.body
+    const fee = fields ? fields.applicationFee : 'N/A'
     console.log('0000', ctx.request.body)
+
+    const body = {
+        message: `Your application fee is ${fee}`
+    }
+
     ctx.body = JSON.stringify(body)
 })
 
