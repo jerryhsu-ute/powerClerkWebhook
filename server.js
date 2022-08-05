@@ -1,8 +1,12 @@
 const koa = require('koa')
 const app = new koa()
 
+const body = {
+    name: "hello from Jerry"
+}
+
 app.use(async (ctx) => {
-    ctx.body = 'Hello World'
+    ctx.body = JSON.stringify(body)
 })
 
 const port = process.env.PORT || 3000
