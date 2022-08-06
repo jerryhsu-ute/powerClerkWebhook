@@ -10,7 +10,8 @@ app.use(async (ctx) => {
     const { fields } = ctx.request.body
     const fee = fields ? fields.applicationFee : 'N/A'
 
-    console.log('Received PowerClerk payload: ', JSON.stringify(ctx.request.body, null, 2))
+    // console.log('Received PowerClerk payload: ', JSON.stringify(ctx.request.body, null, 2))
+    console.log('0000', ctx.request.body)
 
     const body = {
         message: `Your application fee is ${fee}`
